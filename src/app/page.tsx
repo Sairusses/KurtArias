@@ -12,10 +12,10 @@ import {
   Database,
   Smartphone,
   Layers,
-  GraduationCap
+  GraduationCap,
+  GithubIcon
 } from "lucide-react";
 
-// --- Data ---
 const personalInfo = {
   name: "Kurt Arias",
   role: "Software Developer",
@@ -23,7 +23,8 @@ const personalInfo = {
   age: 22,
   education: "BS Computer Science (4th Year Graduating)",
   email: "kurtarias123@gmail.com",
-  image: "/next.svg",
+  github: "https://github.com/sairusses",
+  image: "/2x2.png",
 };
 
 const skillCategories = [
@@ -85,7 +86,6 @@ const projects = [
   }
 ];
 
-// --- Animation Variants ---
 const staggerContainer: Variants = {
   hidden: { opacity: 0 },
   visible: {
@@ -112,8 +112,6 @@ const progressBar: Variants = {
 };
 
 export default function Portfolio() {
-  // Now that we removed the inner 'overflow-y-auto', the main window scrolls.
-  // This means useScroll() will work correctly by default.
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -146,7 +144,7 @@ export default function Portfolio() {
             <motion.div
               animate={{ scale: [1, 1.1, 1], x: [0, 20, 0] }}
               transition={{ duration: 20, repeat: Infinity, repeatType: "mirror" }}
-              className="w-full h-full bg-[url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-20"
+              className="w-full h-full bg-[url('https://www.pinterest.com/pin/connecting-networks--294141419433283828/')] bg-cover bg-center opacity-20"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/80 to-transparent" />
           </div>
@@ -156,7 +154,11 @@ export default function Portfolio() {
               whileHover={{ scale: 1.05, rotate: 5 }}
               className="w-32 h-32 rounded-full border-4 border-yellow-400/20 overflow-hidden shadow-2xl shadow-yellow-900/20 bg-zinc-900 flex items-center justify-center"
             >
-              <img src={personalInfo.image} alt="Profile" className="w-full h-full object-cover p-2" />
+              <img
+                src={personalInfo.image}
+                alt="Profile"
+                className="w-full h-full object-cover object-center"
+              />
             </motion.div>
 
             <div>
@@ -178,6 +180,15 @@ export default function Portfolio() {
               <InfoItem icon={<GraduationCap />} text={personalInfo.education} />
               <InfoItem icon={<MapPin />} text={personalInfo.location} />
               <InfoItem icon={<Mail />} text={personalInfo.email} />
+              <a
+                href={personalInfo.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
+                aria-label="Open GitHub profile"
+              >
+                <InfoItem icon={<GithubIcon />} text="GitHub" />
+              </a>
             </div>
           </div>
         </motion.header>
