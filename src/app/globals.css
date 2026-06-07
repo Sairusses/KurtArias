@@ -1,84 +1,150 @@
 @import "tailwindcss";
 @import "@heroui/styles";
 
+@theme {
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-background: var(--background);
+    --color-border: var(--border);
+    --color-danger: var(--danger);
+    --color-danger-foreground: var(--danger-foreground);
+    --color-default: var(--default);
+    --color-default-foreground: var(--default-foreground);
+    --color-field-background: var(--field-background);
+    --color-field-foreground: var(--field-foreground);
+    --color-field-placeholder: var(--field-placeholder);
+    --color-focus: var(--focus);
+    --color-foreground: var(--foreground);
+    --color-muted: var(--muted);
+    --color-overlay: var(--overlay);
+    --color-overlay-foreground: var(--overlay-foreground);
+    --color-scrollbar: var(--scrollbar);
+    --color-segment: var(--segment);
+    --color-segment-foreground: var(--segment-foreground);
+    --color-separator: var(--separator);
+    --color-success: var(--success);
+    --color-success-foreground: var(--success-foreground);
+    --color-surface: var(--surface);
+    --color-surface-foreground: var(--surface-foreground);
+    --color-surface-secondary: var(--surface-secondary);
+    --color-surface-secondary-foreground: var(--surface-secondary-foreground);
+    --color-surface-tertiary: var(--surface-tertiary);
+    --color-surface-tertiary-foreground: var(--surface-tertiary-foreground);
+    --color-warning: var(--warning);
+    --color-warning-foreground: var(--warning-foreground);
+
+    --radius-theme: var(--radius);
+    --radius-field: var(--field-radius);
+}
+
 :root,
 .light,
 .default,
 [data-theme="light"],
 [data-theme="default"] {
-    /* Theme Colors (Light Mode) */
-    --accent: oklch(57.74% 0.2091 273.85);
-    --accent-foreground: oklch(99.11% 0 0);
-    --background: oklch(97.02% 0.0100 273.85);
-    --border: oklch(90.00% 0.0100 273.85);
-    --danger: oklch(0.5884 0.1993 24.39);
-    --danger-foreground: oklch(98% 0.0199 24.39);
-    --default: oklch(94.00% 0.0100 273.85);
-    --default-foreground: oklch(21.03% 0.0059 273.85);
-    --field-background: oklch(100.00% 0.0050 273.85);
-    --field-foreground: oklch(21.03% 0.0100 273.85);
-    --field-placeholder: oklch(55.17% 0.0200 273.85);
-    --focus: oklch(57.74% 0.2091 273.85);
-    --foreground: oklch(21.03% 0.0100 273.85);
-    --muted: oklch(55.17% 0.0200 273.85);
-    --overlay: oklch(100.00% 0.0030 273.85);
-    --overlay-foreground: oklch(21.03% 0.0100 273.85);
-    --scrollbar: oklch(87.10% 0.0100 273.85);
-    --segment: oklch(100.00% 0.0100 273.85);
-    --segment-foreground: oklch(21.03% 0.0100 273.85);
-    --separator: oklch(92.00% 0.0100 273.85);
-    --success: oklch(0.532 0.1238 151.57);
-    --success-foreground: oklch(98% 0.0124 151.57);
-    --surface: oklch(100.00% 0.0050 273.85);
-    --surface-foreground: oklch(21.03% 0.0100 273.85);
-    --surface-secondary: oklch(95.24% 0.0080 273.85);
-    --surface-secondary-foreground: oklch(21.03% 0.0100 273.85);
-    --surface-tertiary: oklch(93.73% 0.0080 273.85);
-    --surface-tertiary-foreground: oklch(21.03% 0.0100 273.85);
-    --warning: oklch(0.9218 0.1571 99.87);
-    --warning-foreground: oklch(15% 0.0471 99.87);
+    /* ── LIGHT MODE: Architectural Alabaster Backing + Premium Lapis Blue ── */
+    --accent: oklch(52.0% 0.19 255.0);                 /* Bespoke Lapis Blue (Deep, vibrant, high-end) */
+    --accent-foreground: oklch(100.0% 0 0);
+    --background: oklch(98.0% 0.005 255.0);             /* Soft Linen / Alabaster with subtle blue cooling tint */
+    --border: oklch(88.0% 0.015 255.0);
+    --danger: oklch(55.0% 0.21 28.0);
+    --danger-foreground: oklch(98.0% 0.005 28.0);
+    --default: oklch(92.0% 0.01 255.0);
+    --default-foreground: oklch(18.0% 0.02 255.0);
+    --field-background: oklch(100.0% 0 0);
+    --field-foreground: oklch(18.0% 0.02 255.0);
+    --field-placeholder: oklch(52.0% 0.02 255.0);
+    --focus: oklch(52.0% 0.19 255.0);
+    --foreground: oklch(15.0% 0.02 255.0);             /* Deep Ink Navy for clean readability */
+    --muted: oklch(48.0% 0.02 255.0);
+    --overlay: oklch(100.0% 0 0);
+    --overlay-foreground: oklch(18.0% 0.02 255.0);
+    --scrollbar: oklch(85.0% 0.01 255.0);
+    --segment: oklch(100.0% 0 0);
+    --segment-foreground: oklch(18.0% 0.02 255.0);
+    --separator: oklch(90.0% 0.01 255.0);
+    --success: oklch(46.0% 0.14 145.0);
+    --success-foreground: oklch(98.0% 0.005 145.0);
+    --surface: oklch(100.0% 0 0);
+    --surface-foreground: oklch(18.0% 0.02 255.0);
+    --surface-secondary: oklch(94.5% 0.008 255.0);
+    --surface-secondary-foreground: oklch(18.0% 0.02 255.0);
+    --surface-tertiary: oklch(91.0% 0.008 255.0);
+    --surface-tertiary-foreground: oklch(18.0% 0.02 255.0);
+    --warning: oklch(64.0% 0.15 78.0);
+    --warning-foreground: oklch(98.0% 0.005 78.0);
 
-    /* Border Radius */
-    --radius: 0.25rem;
-    --field-radius: 0.75rem;
-
-    /* Font Family */
-    /* Make sure to load Inter font in your app */
-
+    --radius: 0.375rem;
+    --field-radius: 0.5rem;
 }
 
 .dark,
 [data-theme="dark"] {
     color-scheme: dark;
-    /* Theme Colors (Dark Mode) */
-    --accent: oklch(57.74% 0.2091 273.85);
-    --accent-foreground: oklch(99.11% 0 0);
-    --background: oklch(12.00% 0.0100 273.85);
-    --border: oklch(28.00% 0.0100 273.85);
-    --danger: oklch(0.6318 0.2075 24.57);
-    --danger-foreground: oklch(98% 0.0200 24.57);
-    --default: oklch(27.40% 0.0100 273.85);
-    --default-foreground: oklch(99.11% 0 0);
-    --field-background: oklch(21.03% 0.0200 273.85);
-    --field-foreground: oklch(99.11% 0.0100 273.85);
-    --field-placeholder: oklch(70.50% 0.0200 273.85);
-    --focus: oklch(57.74% 0.2091 273.85);
-    --foreground: oklch(99.11% 0.0100 273.85);
-    --muted: oklch(70.50% 0.0200 273.85);
-    --overlay: oklch(21.03% 0.0200 273.85);
-    --overlay-foreground: oklch(99.11% 0.0100 273.85);
-    --scrollbar: oklch(70.50% 0.0100 273.85);
-    --segment: oklch(39.64% 0.0100 273.85);
-    --segment-foreground: oklch(99.11% 0.0100 273.85);
-    --separator: oklch(25.00% 0.0100 273.85);
-    --success: oklch(0.8548 0.1967 150.16);
-    --success-foreground: oklch(15% 0.0500 150.16);
-    --surface: oklch(21.03% 0.0200 273.85);
-    --surface-foreground: oklch(99.11% 0.0100 273.85);
-    --surface-secondary: oklch(25.70% 0.0150 273.85);
-    --surface-secondary-foreground: oklch(99.11% 0.0100 273.85);
-    --surface-tertiary: oklch(27.21% 0.0150 273.85);
-    --surface-tertiary-foreground: oklch(99.11% 0.0100 273.85);
-    --warning: oklch(0.9218 0.1571 99.87);
-    --warning-foreground: oklch(15% 0.0471 99.87);
+    /* ── DARK MODE: Obsidian Sage Base & Cyber Coral ── */
+    --background: oklch(12.5% 0.015 160.0);
+    --surface: oklch(16.5% 0.018 160.0);
+    --surface-secondary: oklch(20.0% 0.022 160.0);
+    --surface-tertiary: oklch(24.0% 0.022 160.0);
+    --border: oklch(23.0% 0.018 160.0);
+    --separator: oklch(19.0% 0.015 160.0);
+    --foreground: oklch(98.0% 0.008 160.0);
+    --muted: oklch(70.0% 0.025 160.0);
+
+    --accent: oklch(64.0% 0.22 42.0);                   /* Hyper-vivid Electric Coral */
+    --accent-foreground: oklch(12.0% 0.02 42.0);
+
+    --danger: oklch(60.0% 0.22 28.0);
+    --danger-foreground: oklch(99.0% 0.005 28.0);
+    --default: oklch(22.0% 0.015 160.0);
+    --default-foreground: oklch(98.0% 0.008 160.0);
+    --field-background: oklch(16.5% 0.018 160.0);
+    --field-foreground: oklch(98.0% 0.008 160.0);
+    --field-placeholder: oklch(60.0% 0.02 160.0);
+    --focus: oklch(64.0% 0.22 42.0);
+    --overlay: oklch(16.5% 0.018 160.0);
+    --overlay-foreground: oklch(98.0% 0.008 160.0);
+    --scrollbar: oklch(35.0% 0.015 160.0);
+    --segment: oklch(24.0% 0.022 160.0);
+    --segment-foreground: oklch(98.0% 0.008 160.0);
+
+    --success: oklch(80.0% 0.16 145.0);
+    --success-foreground: oklch(14.0% 0.04 145.0);
+    --warning: oklch(82.0% 0.16 78.0);
+    --warning-foreground: oklch(15.0% 0.04 78.0);
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: var(--background);
+    color: var(--foreground);
+}
+
+/* Glassmorphism Presets with Optimized Color Mixes for Light/Dark depth */
+.glass-card {
+    background: color-mix(in oklch, var(--surface) 40%, transparent);
+    backdrop-filter: blur(16px) saturate(120%);
+    -webkit-backdrop-filter: blur(16px) saturate(120%);
+    border: 1px solid color-mix(in oklch, var(--border) 50%, transparent);
+}
+
+.glass-interactive {
+    background: color-mix(in oklch, var(--surface) 35%, transparent);
+    backdrop-filter: blur(16px) saturate(120%);
+    -webkit-backdrop-filter: blur(16px) saturate(120%);
+    border: 1px solid color-mix(in oklch, var(--border) 40%, transparent);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-interactive:hover {
+    background: color-mix(in oklch, var(--surface) 60%, transparent);
+    border-color: var(--accent);
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 20px 40px -15px color-mix(in oklch, var(--accent) 18%, transparent);
+}
+
+/* Custom Fine Grain Utility */
+.bg-grain {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
